@@ -1,0 +1,316 @@
+body, html {
+    height: 100%;
+    width:100%;
+    margin:0;
+}
+
+.layout {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family : 'Open Sans', sans-serif;
+}
+.bestLogo{
+    width: 10%;
+    height: 20%;
+    position: absolute;
+    top: 2%;
+    left: 16%;
+    background :url('../img/logo_im_human.png') no-repeat;
+    z-index:10;
+    background-size: contain;
+    min-width: 150px;
+    min-height: 150px;
+}
+
+/* *****************MENU********************/
+    .menu-log{
+        position: absolute;
+        bottom: 0;
+        z-index: 5;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 400px;
+        overflow: hidden;
+    }    
+    .parent{
+        width: 85%;
+        position: relative;
+    }
+    .menu-log .button{
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding: 20px 0;
+        background: #c0392b;
+        cursor: pointer;
+        color : #fff;
+        transition: all ease 0.5s;
+    }
+    .menu-log .button:hover{
+        background: #e74c3c; 
+    }
+    .inscrire, .connecter {
+        bottom: -300px;
+        z-index: 5;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        padding: 15px 0px;
+        width: 100%;
+        max-width: 400px;
+        position: absolute;
+        background-color: #c0392b;
+    }
+    .inscrire input, .connecter input {
+        padding : 3px;
+        width:45%;
+        margin: 5px 0px 5px 5px;
+        height: 25px;
+        font: normal 10px 'Open Sans', sans-serif;
+        border : solid 1px white;
+        font-size: 15px;    
+    }
+    .inscrire .envoyerInscription, .connecter .envoyerConnexion {
+        height: 20px;
+        width: 100%;
+        padding: 11px 0px;
+        display: none;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+        border-top: 1px solid white;
+        margin-top: 10px;
+    }
+        .inscrire .fermerOnglet, .connecter .fermerOnglet {
+        height: 15px;
+        /* position: absolute; */
+        width: 5%;
+        background: url('../img/croix_icone.png') no-repeat 50% 50%;
+        background-size: 70%;
+    }
+    .inscrire .error, .connecter .error {
+        color: white;
+        font-size: 12px;
+        margin-left: 50px;
+    }
+    .menu-log .user {
+        float: left;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        background: #c0392b;
+        color : #fff;
+        height: 62px;
+        display:none;
+    }
+
+
+/*************PANEL*************/
+    .colLeft{
+        width: 100%;
+        height: 100%;
+        background: #2c3e50;
+        position: absolute;
+        top: 0;
+        left: -15%;
+        -moz-box-shadow: 20px 0px 120px 0px #000;
+        -webkit-box-shadow: 20px 0px 120px 0px #000;
+        -o-box-shadow: 20px 0px 120px 0px #000;
+        box-shadow: 20px 0px 120px 0px #000;
+        z-index: 4;
+    }
+    .searchBlock, .searchBlock2{
+        width: 25%;
+        position: absolute;
+        left: 45%;
+        margin-top: 15%;
+    }
+    .searchBlock2{
+        left: 30%
+    }
+    .inputRechercheType, .inputRechercheQuoi{
+        width: 100%;
+        height: 40px;
+        font: normal 20px 'Open Sans', sans-serif;
+    }
+    .inputRechercheType{
+        left: 30%;
+        height: 64px;
+    }
+    .inputRechercheQuoi{
+        left: 30%;
+        height: 64px;
+        margin-top: 10%;
+    }
+    .inputDon{
+        padding : 10px;
+        width:100%;
+        height: 40px;
+        font: normal 20px 'Open Sans', sans-serif;
+        border : solid 1px white;
+        z-index:20;
+        margin-left: -10px;
+    }
+    .searchButton{
+        height: 20px;
+        width: 100%;
+        padding: 11px;
+        background-color: #2980b9;
+        display: none;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+        margin-left: -10px;
+
+    }
+
+    .searchButton2{
+        height: 20px;
+        width: 100%;
+        padding: 11px 0;
+        background-color: #2980b9;
+        display: none;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+    }
+    .colRight{
+        width: 100%;
+        height:100%;
+        background: #436587;
+        position: relative;
+        top: 0;
+        left: 85%;
+        -moz-box-shadow: -20px 0px 120px 0px #1C1C1C;
+        -webkit-box-shadow: -20px 0px 120px 0px #1C1C1C;
+        -o-box-shadow: -20px 0px 120px 0px #1C1C1C;
+        box-shadow: -20px 0px 120px 0px #1C1C1C;
+    }
+    .colRight .logoSearch{
+        height: 100%;
+        position: absolute;
+        width: 15%;
+        background: url('../img/loupe_icon.png') no-repeat 50% 50%;
+        background-size: 70%;
+        left: 0;
+    }
+    .colLeft .logoGive{
+        height: 100%;
+        position: absolute;
+        width: 15%;
+        background: url('../img/money_icon.png') no-repeat 50% 50%;
+        background-size: 70%;
+        right:0;
+        display: none;
+    }
+    .advancedSearch{
+        margin: 0;
+        color: #e74c3c;
+        font-size: 30px;
+    }
+
+    /*************TABLE DATA*************/
+    .tableData {
+        width: 24%;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        margin-top: 5%;
+        display: none;
+        top:10%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        max-height: 620px;
+        background: #2980b9;
+        height: 70%;
+        min-width:900px; ;
+    }
+
+    .tableData .tableElem{
+        height: 140px;
+        width: 100%;
+        border-top: 4px solid #2c3e50;
+        border-bottom: 4px solid #2c3e50;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all ease 0.5s;
+    }
+    .tableData .tableElem:hover{
+        background: #3498db;
+    }
+
+    .tableData  .arbre .logo{
+        background: url('../img/arbre_icon.png') no-repeat left center;
+        background-size: contain;
+    }
+
+    .tableData .medicament .logo{
+        background: url('../img/medicament_icon.png') no-repeat left center;
+        background-size: contain;
+    }
+
+    .tableData .kit .logo{
+        background: url('../img/kitScolaire_icon.png') no-repeat left center;
+        background-size: contain;
+    }
+
+    .tableData .repas .logo{
+        background: url('../img/repas_icon.png') no-repeat left center;
+        background-size: contain;
+    }
+
+    .tableData .ecole .logo{
+        background: url('../img/ecole_icon.png') no-repeat left center;
+        background-size: contain;
+    }
+
+    .tableData .logo{
+        height: 100%;
+        width: 10%;
+        position: relative;
+        left: 2%;
+        float: left;
+        min-width: 100px;
+    }
+
+    .tableData span {
+        float: left;
+        margin-left: 6%;
+        margin-top:5%;
+        font-size: 35px;
+        color:#2c3e50;
+    }
+    .continent{
+        display:none;
+    }
+    .continent div{
+        padding : 10px;
+        border-top: 1px solid #2c3e50;
+        border-bottom: 1px solid #2c3e50;$
+        text-align: center;
+        font-size: 25px;
+        color:#2c3e50;
+        cursor: pointer;
+    }
+
+    .tableElemInfos p:nth-child(1){
+        font-size: 35px;
+        color:#2c3e50;
+    }
+
+    .tableElemInfos a {
+        color:#2c3e50;
+    }
+
+    .tableElemInfos{
+        padding: 10px;
+    }
+
+
