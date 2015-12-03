@@ -9,3 +9,7 @@ Router::route('home', 'HomeController');
 Router::route('account',        'AccountController');
 Router::route('association',    'AssociationController');
 Router::route('mission',        'MissionController');
+
+// Dons
+
+Router::route('dons', 'DonateController');

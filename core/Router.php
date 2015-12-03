@@ -57,6 +57,8 @@ class Router
 
             if (!empty($method))
             {
+                $method = str_replace('-', '_', $method);
+
                 if (!method_exists($controller, $method))
                 {
                     // Log("Method $controllerName::$method not found");
@@ -108,5 +110,11 @@ class Router
     public static function asset($asset)
     {
         echo ASSETS . $asset;
+    }
+
+    public static function getParam($id)
+    {
+        $params = explode('/', $_GET['params']);
+        return @$params[$id + 1];
     }
 }

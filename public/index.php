@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 define('ROOT', __DIR__ . '/..');
 define('DS', DIRECTORY_SEPARATOR);
 
