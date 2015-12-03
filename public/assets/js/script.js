@@ -24,7 +24,7 @@ $(function() {
     , $cp = $('.cp')
     , $login = $('.login')
     , $mdp = $('.mdp')
-    , URL = 'http://n2i.voidmx.net/2014/';
+    , URL = 'http://localhost/n2i-backend/';
 
     var passMenu = 0;
     var convertElToId = {

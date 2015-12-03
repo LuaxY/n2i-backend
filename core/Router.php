@@ -57,6 +57,7 @@ class Router
 
             if (!empty($method))
             {
+                $method = str_replace("-","_",$method);
                 if (!method_exists($controller, $method))
                 {
                     // Log("Method $controllerName::$method not found");
