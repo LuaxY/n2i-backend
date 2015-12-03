@@ -11,9 +11,4 @@ class HomeController
     {
         Router::view('pages/home');
     }
-
-    public function a()
-    {
-        echo 'a';
-    }
 }
