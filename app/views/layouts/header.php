@@ -10,13 +10,17 @@
 </head>
 <body>
     <div id="header">
-        <h2>Test titre h2</h2>
+        <h2>I'm Human</h2>
     </div>
     <div class="contentMenu">
-        <button id="btnMenu1" class="btnMenu"><i class="material-icons">account_circle</i><p class="pMenu">Log In</p></button>
-        <button id="btnMenu2" class="btnMenu"><i class="material-icons">card_giftcard</i><p class="pMenu">Don</p></button>
+        <?php if (isLogged()) { ?>
+        <button id="btnMenu1" class="btnMenu btnLogout"><i class="material-icons">account_circle</i><p class="pMenu">Deconnexion</p></button>
+        <?php } else { ?>
+        <button id="btnMenu1" class="btnMenu btnLogin"><i class="material-icons">account_circle</i><p class="pMenu">Connexion</p></button>
+        <?php } ?>
+        <button id="btnMenu2" class="btnMenu"><i class="material-icons">card_giftcard</i><p class="pMenu">Dons</p></button>
         <button id="btnMenu3" class="btnMenu"><i class="material-icons">map</i><p class="pMenu">Besoin mondial</p></button>
         <button id="btnMenu4" class="btnMenu"><i class="material-icons">games</i><p class="pMenu">Et si on jouait ?</p></button>
-        <button id="btnMenu5" class="btnMenu"><i class="material-icons">lightbulb_outline</i><p class="pMenu">???</p></button>
+        <button id="btnMenu5" class="btnMenu"><i class="material-icons">lightbulb_outline</i><p class="pMenu">Boite à idées</p></button>
     </div>
     <div class="content">
