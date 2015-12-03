@@ -7,3 +7,4 @@ Router::route('home', 'HomeController');
 
 Router::route('account', 'AccountController');
 Router::route('dons',    'DonateController');
+Router::route('ideabox', 'BaiController');
