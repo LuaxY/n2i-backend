@@ -5,11 +5,17 @@ class DonateController
 
     public function faire_un_don()
     {
+        if (!isLogged())
+            header("location: " . Router::url("account/login"));
+
         Router::view('pages/dons/faire_un_don');
     }
 
     public function choisir_une_agence()
     {
+        if (!isLogged())
+            header("location: " . Router::url("account/login"));
+
         $don = @$_REQUEST['don'];
 
         if (empty($don))
@@ -22,6 +28,9 @@ class DonateController
 
     public function prendre_un_rendez_vous()
     {
+        if (!isLogged())
+            header("location: " . Router::url("account/login"));
+
         $agenceId = Router::getParam(1);
 
         if (!$agenceId)
@@ -36,6 +45,9 @@ class DonateController
 
     public function valider_le_rendez_vous()
     {
+        if (!isLogged())
+            header("location: " . Router::url("account/login"));
+
         $date = @$_REQUEST['date'];
         $heure = @$_REQUEST['heure'];
 

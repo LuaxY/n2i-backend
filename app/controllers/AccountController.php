@@ -31,7 +31,7 @@ class AccountController
         }
         $res = Database::query("SELECT USER_ID FROM USER where USER_E_MAIL= '{$_REQUEST['email']}'");
         $_SESSION["compte"] = $res[0]["USER_ID"];
-        header("location: " . Router::url("/"));
+        header("location: " . Router::url(""));
     }
     /**
      * log out
@@ -42,7 +42,7 @@ class AccountController
        if(isset($_SESSION["compte"])){
            session_destroy();
        }
-        header("location: " . Router::url("/"));
+        header("location: " . Router::url(""));
     }
     /**
      * new account view
