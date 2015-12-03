@@ -7,5 +7,6 @@ Router::route('home', 'HomeController');
 
 // API
 Router::route('account',        'AccountController');
+Router::route('ideabox',        'BaiController');
 Router::route('association',    'AssociationController');
 Router::route('mission',        'MissionController');

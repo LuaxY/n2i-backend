@@ -1,8 +1,8 @@
 <?php
 
-define('DB_USER',     'imhuman');
-define('DB_PASS',     'imhuman');
-define('DB_SERVER',   'mysql:dbname=imhuman;host=localhost');
+define('DB_USER',     'n2i_2015');
+define('DB_PASS',     'n2i_2015');
+define('DB_SERVER',   'mysql:dbname=n2i_2015;host=voidmx.net');
 
 define('TOKEN',    'YoanCyrilYann');
 
