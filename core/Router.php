@@ -102,9 +102,9 @@ class Router
         }
     }
 
-    public static function url($url)
+    public static function url($url = "")
     {
-
+        return URL . $url;
     }
 
     public static function asset($asset)
