@@ -24,6 +24,10 @@ $(function() {
     window.location.replace("/account/out");
   });
 
+  $('#btnMenu3').on('click', function(){
+    window.location.replace("/ndl3d/index.php");
+  });
+
   $('#filtre').on('click', function(){
     if(Menu.test == true){
         TweenMax.to(".contentLogin", 1 , {ease: Elastic.easeIn.config(1.2, 0.7), css:{scaleX:0.5, scaleY:0.5, opacity : 0}});
