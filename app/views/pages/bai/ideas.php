@@ -7,22 +7,22 @@ Router::view('layouts/header');
     <?php
       foreach($ideas as $value){
         $validate = $value["valide"];
-        if($validate == 0){$color='grey';}
-        else if($validate == 1){$color='green';}
-        else{$color='red';}
+        if($validate == 0){$color='#ccc';}
+        else if($validate == 1){$color='forestgreen';}
+        else{$color='firebrick';}
 
-        echo("<div style=\"background-color:".$color.";\"");
+        echo("<div style=\"background-color:".$color."; margin-bottom : 5px;\"");
         echo("<hr>".$value["objet"]."<br/>");
-        echo($value["message"]."<br/><br/><hr>");
+        echo($value["message"]."<br/><br/>");
         echo("</div>");
       }
     ?>
   </div>
   <hr>
-  <div class="center"><a href="ideabox/nouvelle_idee">Soumettre une idée!</a></div>
-<div class="center"><a href="ideabox/nouvelle_idee">Vert: Validé</a></div>
-<div class="center"><a href="ideabox/nouvelle_idee">Rouge: Refusé</a></div>
-<div class="center"><a href="ideabox/nouvelle_idee">Gris: En attente</a></div>
+  <div class="center"><a class="inputDon btnValid" href="ideabox/nouvelle_idee">Soumettre une idée!</a></div>
+<div class="center">Vert: Validé</div>
+<div class="center">Rouge: Refusé</div>
+<div class="center" style="margin-bottom : 10px;">Gris: En attente</div>
 </div>
 <?php
 Router::view('layouts/footer');

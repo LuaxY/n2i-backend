@@ -42,7 +42,7 @@ Router::view('layouts/header');
         <label id="bonnerep" hidden="hidden"><?php echo($infos["RANG"]) ?></label>
         <input type="text" id="wins" name="wins" hidden="hidden"  value="<?php echo($wins) ?>" />
     <div id="reponse"></div>
-    <input type="submit" id="submitSerious" value="Valider"/>
+    <input type="submit" class="inputDon btnValid" value="Valider"/>
         </div>
         <input type="submit" id="goodsubmit" value="Question suivante" style="display:none;">
 </form>

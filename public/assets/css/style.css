@@ -6,7 +6,7 @@ html{
 body{
   height: 100%;
   font-family: 'Roboto', sans-serif;
-  overflow: hidden;
+  overflow-y: auto;
   margin: 0;
 }
 
@@ -28,16 +28,16 @@ h3{
   text-align: center;
 }
 
-#filtre{
-  display: block;
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  opacity: 0.7;
-  background-color: black;
-  z-index: 1;
-  top: -10%;
-  left:-10%;
+#filtre {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100vw;
+    opacity: 0.7;
+    background-color: black;
+    z-index: 1;
+    /* top: -10%; */
+    /* left: -10%; */
 }
 
 #header{
@@ -52,11 +52,13 @@ h3{
   background-size: cover;
 }
 
-.contentMenu{
-  position: relative;
-  height: 100%;
-  width: 15%;
-  display: inline-block;
+.contentMenu {
+    position: absolute;
+    height: 70%;
+    width: 15%;
+    display: inline-block;
+    float: left;
+    min-width: 155px;
 }
 
 .btnMenu{
@@ -68,7 +70,7 @@ h3{
   border: none;
   font-weight: 600;
   outline: none;
-  height: 12%;
+  height: 16.65%;
   cursor: pointer;
 }
 
@@ -141,10 +143,7 @@ h3{
   color: inherit;
   text-decoration: none;
 }
-.descContent a:hover{
-  color:#57C19E;
-  transition: color 0.3s ease;
-}
+
 
 .inputLogin{
     margin: 0 auto;
@@ -240,6 +239,7 @@ h3{
     text-align: center;
     color: black;
     outline: none;
+    line-height: 50px;
 }
 .inputDon:focus {
     border-color: #6EFACB;
@@ -317,6 +317,24 @@ canvas
   border-radius: 100%;
 }
 
+#question{
+    margin-bottom: 10px;
+}
+
+#submitSerious{
+    width : 250px;
+    height : 40px;
+    margin: 30px auto;
+    font-size: 25px;
+    font-family: Arial;
+    background: #6EFACB;
+    border : 1px solid black;
+    display : block;
+}
+
+.input-group{
+    margin-left: 20px;
+}
 @media screen and (max-width: 640px) {
 
   body{
@@ -457,10 +475,38 @@ canvas
 }
 
 .scrollIdeas{
-  height: 140px;
+  height: 35vh;
   overflow-y: scroll;
+}
+
+.scrollIdeas div{
+    padding: 5px;
+    box-sizing: content-box;
+}
+
+a.buttonS{
+    width : 250px;
+    height : 30px;
+    line-height: 30px;
+    margin: 30px auto;
+    font-size: 20px;
+    font-family: Arial;
+    background: #6EFACB;
+    border : 1px solid black;
+    display : block;
+}
+a.buttonS:hover{
+    color : black;
+    background: #57C19E;
 }
 
 .response{
   font-weight: 300;
+}
+
+@media screen and (max-width: 400px) {
+    .descContent {
+    width: 100%;
+    margin-left: 0;
+    }
 }
