@@ -73,7 +73,8 @@ class AccountController
 
         if (!empty($error_field))
         {
-            Router::view('pages/account/inscription',["error"=>"Au moins un des champs est manquant"]); die();
+            //Router::view('pages/account/inscription',["error"=>"Au moins un des champs est manquant"]); die();
+            Router::json('error', '#popUpLogin2 .error', 'Au moins un des champs est manquant');
         }
 
             // check email only js
@@ -83,7 +84,9 @@ class AccountController
 
         if ($res)
         {
-            Router::view('pages/account/inscription',["error"=>"Email déjà existant"]); die();
+            //Router::view('pages/account/inscription',["error"=>"Email déjà existant"]); die();
+            //Router::view('pages/error', ['error' => 'Email déjà existant']);
+            Router::json('error', '#popUpLogin2 .error', 'Email déjà existant');
         }
 
         $pwd =hash('sha512', $_REQUEST["password"].'1mhum4n');
@@ -97,10 +100,15 @@ class AccountController
 
         if ($res)
         {
-            Router::view('pages/account/inscription',["error"=>"Compte créé"]); die();
+            //Router::view('pages/account/inscription',["error"=>"Compte créé"]); die();
+            //Router::view('pages/success', ['success' => 'Compte créé, connectez-vous ;)']);
+            $_SESSION['flash'] = 'Compte créé, connectez-vous ;)';
+            Router::json('reload', '', '/');
         } else
         {
-            Router::view('pages/account/inscription',["error"=>"Compte déjà existant"]); die();
+            //Router::view('pages/account/inscription',["error"=>"Compte déjà existant"]); die();
+            //Router::view('pages/error', ['error' => 'Compte déjà existant']);
+            Router::json('error', '#popUpLogin2 .error', 'Compte déjà existant');
         }
     }
 

@@ -14,11 +14,12 @@
         <div class="center"><a id="coToIns" class="txtPopUp">Pas encore inscrit ?</a></div>
       </div>
       <div id="popUpLogin2">
-        <form method="post" id="inscription" action="">
+        <form method="post" id="inscription" action="/account/create">
           <input class="inputLogin" type="text" name="prenom" placeholder="Nom"><br>
           <input class="inputLogin" type="text" name="nom" placeholder="Prénom"><br>
-          <input class="inputLogin" type="text" name="Email" placeholder="Votre Email"><br>
-          <input class="inputLogin" type="password" name="Pswd" placeholder="Votre Mot de Passe"><br>
+          <input class="inputLogin" type="text" name="cp" placeholder="Code Postal"><br>
+          <input class="inputLogin" type="text" name="email" placeholder="Votre Email"><br>
+          <input class="inputLogin" type="password" name="password" placeholder="Votre Mot de Passe"><br>
           <input class="inputLogin btnValid" type="submit" value="Inscription">
           <p class="error"></p>
           <p class="successmsg"></p>
