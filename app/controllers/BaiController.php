@@ -6,12 +6,12 @@ class BaiController
     {
         $ideas = Database::query("SELECT * FROM IDEE");
 
-        Router::view('pages/bai/ideas', ["ideas" => $ideas]);
+        return Router::view('pages/bai/ideas', ["ideas" => $ideas]);
     }
 
     public function nouvelle_idee()
     {
-            Router::view('pages/bai/send');
+            return Router::view('pages/bai/send');
     }
 
     public function envoyer()
@@ -27,7 +27,7 @@ class BaiController
         ), "IDEE");
 
         if($res){
-          Router::view('pages/bai/end');
+          return Router::view('pages/bai/end');
         }
     }
 }

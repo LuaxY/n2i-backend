@@ -19,9 +19,9 @@ class GameController
     }
         $res = Database::query("SELECT * FROM QUESTION LIMIT ".$limit.",1");
         if($res)
-            Router::view( 'pages/game/index',["infos" => $res[0],"wins" => $wins]);
+            return Router::view( 'pages/game/index',["infos" => $res[0],"wins" => $wins]);
         else
-            Router::view( 'pages/game/end',["wins" => $wins]);
+            return Router::view( 'pages/game/end',["wins" => $wins]);
     }
 
 }
