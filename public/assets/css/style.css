@@ -17,6 +17,14 @@ h2{
   text-align: center;
 }
 
+#header h2{
+	color: white;
+	font-size: 3.5em;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 0 0 10px black;
+}
+
 h3{
   color:#000;
   font-size: 2.5em;
@@ -58,7 +66,7 @@ h3{
     width: 15%;
     display: inline-block;
     float: left;
-    min-width: 155px;
+    min-width: 168px;
 }
 
 .btnMenu{
@@ -374,14 +382,6 @@ canvas
     background: url('../img/hd.jpg') center center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-
-  #header h2{
-    color:white;
-    font-size: 3.5em;
-    font-weight: bold;
-    text-align: center;
-    text-shadow:0 0 10px black;
   }
 
   #popUpLogin1{
