@@ -61,7 +61,7 @@ h2{
   border: none;
   font-weight: 600;
   outline: none;
-  height: 14%;
+  height: 12%;
   cursor: pointer;
 }
 
@@ -81,7 +81,7 @@ h2{
   margin-top: 14px;
   display: block;
 }
-#btnMenu1:hover, #btnMenu2:hover, #btnMenu3:hover, #btnMenu4:hover, #btnMenu5:hover {
+#btnMenu1:hover, #btnMenu2:hover, #btnMenu3:hover, #btnMenu4:hover, #btnMenu5:hover, #btnMenu6:hover {
   background: #57C19E;
   transition: background-color 0.3s ease;
 }
@@ -368,3 +368,10 @@ h2{
     transition: background-color 0.3s ease;
     transition: color 0.3s ease;
   }
+
+.error{
+  color: red;
+}
+.successmsg{
+  color: green;
+}

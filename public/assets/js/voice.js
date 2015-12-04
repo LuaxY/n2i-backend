@@ -82,6 +82,7 @@ var Voice = {
               console.log("home");
               $('.contentDon').fadeOut();
               $('.contentMap').fadeOut();
+              $('.contentBoiteIdee').fadeOut();
               $('.contentSeriousGame').fadeOut();
               $('.content').fadeIn();
               break;
@@ -98,6 +99,7 @@ var Voice = {
             case "dont":
                 console.log("don");
                 $('.content').fadeOut();
+                $('.contentBoiteIdee').fadeOut();
                 $('.contentMap').fadeOut();
                 $('.contentSeriousGame').fadeOut();
                 $('.contentDon').fadeIn();
@@ -105,14 +107,24 @@ var Voice = {
             case "besoinmondial":
             case "besoinmondiale":
                 console.log("besoinmondial");
-                window.location.replace("http://localhost/n2i-frontend/ndl3d/index.php");
+                window.location.replace("/ndl3d/index.php");
                 break;
             case "etsionjouait":
                 console.log("etsionjouait");
                 $('.content').fadeOut();
                 $('.contentDon').fadeOut();
+                $('.contentBoiteIdee').fadeOut();
                 $('.contentMap').fadeOut();
                 $('.contentSeriousGame').fadeIn();
+                break;
+            case "boiteaidee":
+            case "boiteaidees":
+                console.log("boiteaidee");
+                $('.content').fadeOut();
+                $('.contentDon').fadeOut();
+                $('.contentMap').fadeOut();
+                $('.contentSeriousGame').fadeOut();
+                $('.contentBoiteIdee').fadeIn();
                 break;
             case "yoann":
             case "yoan":

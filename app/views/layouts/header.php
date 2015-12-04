@@ -21,9 +21,9 @@
         <?php } else { ?>
         <button id="btnMenu1" class="btnMenu btnLogin"><i class="material-icons">account_circle</i><p class="pMenu">Connexion</p></button>
         <?php } ?>
-        <button id="btnMenu2" class="btnMenu"><i class="material-icons">card_giftcard</i><a href="/dons/faire-un-don" class="pMenu">Don</a></button>
+        <button id="btnMenu2" class="btnMenu"><i class="material-icons">card_giftcard</i><p class="pMenu">Don</p></button>
         <button id="btnMenu3" class="btnMenu"><i class="material-icons">map</i><a href="./ndl3d/index.php" class="pMenu">Besoin mondial</a></button>
         <button id="btnMenu4" class="btnMenu"><i class="material-icons">games</i><p class="pMenu">Et si on jouait ?</p></button>
-        <button id="btnMenu5" class="btnMenu"><i class="material-icons">lightbulb_outline</i><a href="/ideabox" class="pMenu">Boite à idées</a></button>
+        <button id="btnMenu6" class="btnMenu"><i class="material-icons">help</i><a href="/ideabox" class="pMenu">Boite à idées</a></button>
     </div>
     <div class="content">
