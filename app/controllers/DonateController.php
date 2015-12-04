@@ -9,7 +9,6 @@ class DonateController
             header("location: " . Router::url("account/login"));
 
         Router::view('pages/dons/faire_un_don');
-        //Router::json('redirect', '.selector', 'pages/dons/api_faire_un_don');
     }
 
     public function choisir_une_agence()
@@ -24,8 +23,7 @@ class DonateController
 
         if (empty($don))
         {
-            die("");
-            Router::json('error', '.selector', 'Don invalide');
+            Router::view('pages/error', ['error' => 'Don invalide']);
         }
 
         $list_agences = Database::query("SELECT ASSOCIATION.NOM_ASSOC, AGENCE.* from AGENCE, ASSOCIATION, USER
@@ -51,10 +49,8 @@ class DonateController
 
         if (!$agenceId)
         {
-            die("Agence invalide");
+            Router::view('pages/error', ['error' => 'Agence invalide']);
         }
-
-        // TODO: get agence /w $agenceId
 
         Router::view('pages/dons/prendre_un_rendez_vous', ["AGENCE_ID" => $agenceId]);
     }
@@ -70,7 +66,7 @@ class DonateController
 
         if (empty($date) || empty($heure) || empty($agenceId))
         {
-            die("Date/heure invalide");
+            Router::view('pages/error', ['error' => 'Date/heure invalide']);
         }
 
         $res = Database::save((object)array(
@@ -80,9 +76,9 @@ class DonateController
             "RDV_DATE" => "$date $heure"
         ), "RDV");
 
-        unset($_SESSION['don']);
+        //unset($_SESSION['don']);
 
-        Router::json('success', '.selector', 'Rendez-vous bien effectué...');
+        Router::view('pages/success', ['success' => 'Le rendez-vous a bien était prit en compte.']);
     }
 
 }

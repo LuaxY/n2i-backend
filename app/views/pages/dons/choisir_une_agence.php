@@ -2,6 +2,7 @@
 Router::view('layouts/header');
 ?>
 
+<div class="descContent">
 Prise de rendez-vous pour le don de : <?php echo $don; ?>
 <br>
 <br>
@@ -28,6 +29,7 @@ Agences local :
       }
     ?>
 </table>
+</div>
 
 <?php
 Router::view('layouts/footer');

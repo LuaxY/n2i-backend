@@ -27,12 +27,6 @@ var AJAX = {
                         setTimeout(function(){
 
                             message = data;
-                            /*objet de retour*/
-                            /*
-                            * JSON : type -> success, error...
-                                     msg -> html ou message d'erreur
-                                     field -> champ a remplir ou modifier
-                            */
 
                             if(message.status == 'error'){
                                 $(message.field).html(message.msg).fadeIn(1000);
@@ -49,13 +43,6 @@ var AJAX = {
                             if(message.status == 'reload'){
                                 window.location.replace(message.msg);
                             }
-                                /*
-                                if(message.type == 'logout'){
-                                    window.location = message.msg;
-                                }*/
-                                /*setTimeout(function(){
-                                    $('.formbutton').removeClass('loading').html(btnText);
-                                },150);*/
 
                         },1000);
                     }

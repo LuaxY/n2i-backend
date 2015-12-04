@@ -20,6 +20,10 @@ $(function() {
     Menu.test = true;
   });
 
+  $('.btnLogout').on('click', function(){
+    window.location.replace("/account/out");
+  });
+
   $('#filtre').on('click', function(){
     if(Menu.test == true){
         TweenMax.to(".contentLogin", 1 , {ease: Elastic.easeIn.config(1.2, 0.7), css:{scaleX:0.5, scaleY:0.5, opacity : 0}});
@@ -109,7 +113,7 @@ $(function() {
     $('.contentMap').fadeOut();
     $('.contentSeriousGame').fadeOut();
     $('.contentBoiteIdee').fadeOut();
-    $('.content').fadeIn();
+    window.location.replace("/");
   });
   //Over
   if($height >= 641){

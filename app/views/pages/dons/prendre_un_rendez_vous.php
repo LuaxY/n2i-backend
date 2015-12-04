@@ -3,7 +3,11 @@ Router::view('layouts/header');
 $date = date("Y-m-d");
 ?>
 
-<form action="/dons/valider-le-rendez-vous" method="post">
+<form action="/dons/valider-le-rendez-vous" method="post" class="descContent">
+    Selectionnez une date de rendez-vous:
+    <br>
+    <br>
+    <br>
     Date: <input type="date" class="inputDon" name="date" min="<?php echo $date ?>" value="">
     <br>
     Heure: <input type="time" class="inputDon" name="heure" value="">

@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="contentDon">
+    <!--<div class="contentDon">
       <h2>Faire un don !</h2>
       <div class="descContent">
         <form method="post" id="don" action="127.0.0.1/">
@@ -39,7 +39,7 @@
           <p class="successmsg"></p>
         </form>
       </div>
-    </div>
+  </div>-->
 
     <div class="contentSeriousGame">
       <div class="descContent">
