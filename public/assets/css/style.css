@@ -40,7 +40,9 @@ h2{
   text-align: center;
   width: 100%;
   height: 30%;
-  background: url('../img/header.jpg') center center;
+  background: url('../img/hd.jpg') center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .contentMenu{
@@ -62,6 +64,11 @@ h2{
   height: 14%;
   cursor: pointer;
 }
+
+.btnMenu a{
+  text-decoration: none;
+  color : black;
+}
 .material-icons{
   float: left;
   font-size: 50px;
@@ -71,10 +78,11 @@ h2{
   font-size: 1.0em;
   font-weight: 300;
   display: initial;
-  margin-top: 1px;
+  margin-top: 14px;
+  display: block;
 }
 #btnMenu1:hover, #btnMenu2:hover, #btnMenu3:hover, #btnMenu4:hover, #btnMenu5:hover {
-  background: yellow;
+  background: #57C19E;
   transition: background-color 0.3s ease;
 }
 
@@ -93,11 +101,17 @@ h2{
   display:none;
   float:right;
 }
+.contentDon h2{
+  color : black;
+}
 .contentMap{
   width: 85%;
   height: 70%;
   display:none;
   float:right;
+}
+.contentMap h2{
+  color : black;
 }
 .contentSeriousGame{
   width: 85%;
@@ -105,12 +119,15 @@ h2{
   display:none;
   float:right;
 }
+.contentSeriousGame h2{
+  color : black;
+}
 
-#descContent{
+.descContent{
   width:70%;
   margin-left:15%;
 }
-#descContent p{
+.descContent p{
   text-align: justify;
 }
 
@@ -130,8 +147,10 @@ h2{
     border-color: #6EFACB;
 }
 .btnValid{
-  margin-top: 2%;
   margin-bottom: 2%;
+}
+.inputDon.btnValid{
+  margin: 5% auto;
 }
 .btnValid:hover{
   background: #6EFACB;
@@ -140,7 +159,7 @@ h2{
   transition: color 0.3s ease;
 }
 
-::-webkit-input-placeholder {
+.inputLogin ::-webkit-input-placeholder {
     color:rgba(255, 255, 255, 0.5);
     text-align: center;
 }
@@ -148,6 +167,7 @@ h2{
 #popUpLogin1{
   display: block;
   position: relative;
+  min-width: 250px;
   top: 27.5%;
   left: 30%;
   width: 30%;
@@ -190,6 +210,161 @@ h2{
   cursor: pointer;
 }
 .txtPopUp:hover{
-  color:yellow;
+  color:#57C19E;
   transition: color 0.3s ease;
 }
+
+.inputDon{
+    margin: 0 auto;
+    display: block;
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    background: transparent;
+    border: 1px solid black;
+    text-align: center;
+    color: black;
+    outline: none;
+}
+.inputDon:focus {
+    border-color: #6EFACB;
+}
+.inputDon ::-webkit-input-placeholder {
+    color:rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.mapcontent{
+  height : 100%;
+  width : 100%;
+}
+
+@media screen and (max-width: 640px) {
+
+  body{
+    overflow-y : scroll;
+  }
+
+  .contentMenu{
+    position: relative;
+    height: 50%;
+    width: 98%;
+    left:1%;
+    display: inline-block;
+    margin-top:1%;
+  }
+
+  .material-icons{
+    float: left;
+    font-size: 25px;
+    margin-left: 2%;
+  }
+
+  #btnMenu1, #btnMenu2, #btnMenu3, #btnMenu4, #btnMenu5{
+    margin-bottom:1%;
+  }
+
+  .content{
+    width: 94%;
+    height: 70%;
+    margin-left: 3%;
+    display:block;
+    float:left;
+  }
+
+  .content h2{
+    font-size: 2.8em;
+    color : black;
+  }
+
+  #header{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height: 25%;
+    background: url('../img/hd.jpg') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #header h2{
+    color:white;
+    font-size: 3.5em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow:0 0 10px black;
+  }
+
+  #popUpLogin1{
+    display: block;
+    position: relative;
+    top: 30%;
+    left: 5%;
+    width: 80%;
+    padding:5%;
+    background: black;
+    border-radius: 5px;
+    z-index: 2;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+  }
+
+  #popUpLogin2{
+    display: none;
+    position: relative;
+    top: 30%;
+    left: 5%;
+    width: 80%;
+    padding:5%;
+    background: black;
+    border-radius: 5px;
+    z-index: 2;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+  }
+
+  .btnValid{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: rgba(93, 86, 86, 0.6);
+
+  }
+
+  }
+
+
+  .inputDon{
+      margin: 0 auto;
+      display: block;
+      width: 250px;
+      height: 50px;
+      font-size: 20px;
+      background: transparent;
+      border: 1px solid black;
+      text-align: center;
+      color: black;
+      outline: none;
+  }
+
+  .inputDon:focus {
+      border-color: #6EFACB;
+  }
+  .inputDon ::-webkit-input-placeholder {
+      color:rgba(0, 0, 0, 0.5);
+      text-align: center;
+  }
+
+  .inputDon.btnValid{
+    margin: 5% auto;
+  }
+  .btnValid:hover{
+    background: #6EFACB;
+    color:black;
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+  }

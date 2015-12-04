@@ -4,13 +4,12 @@ var AJAX = {
             console.log('JS AJAX INIT');
 
             /* Manage all .xhrForm with button /!\ need class active in case of                   // multiple form in same page */
-            $(document).on('submit','#connexion', function(e){
+            $(document).on('submit','#don, #connexion, #inscription', function(e){
                 e.preventDefault();
                 AJAX.request($(this));
             });
         },
         request: function(form){
-
             $.ajax({
                 url: form.attr('action'),
                 type: 'POST',
@@ -26,6 +25,7 @@ var AJAX = {
                     if(data){
                         console.log(data);
                         setTimeout(function(){
+
                             message = data;
                             /*objet de retour*/
                             /*
@@ -33,27 +33,22 @@ var AJAX = {
                                      msg -> html ou message d'erreur
                                      field -> champ a remplir ou modifier
                             */
-                            //$.each(data, function(index, message){
-                                console.log(message);
-                                if(message.status == 'error'){
-                                    $('.formError').html(message.msg).fadeIn(1000);
-                                    console.log(message.msg);
-                                    if(message.field){
-                                        //get error field and add class error on it
-                                        $('input[name='+message.field+'], select[name='+message.field+']').addClass('error').parent('.outer-select').addClass('error');
-                                    }
-                                }
-                                if(message.status == 'success'){
-                                    $(message.field).html(message.msg);
-                                }
-                                if(message.status == 'redir'){
-                                    //update body
-                                    $(message.field).fadeOut(150, function(){
-                                        $(this).html(message.msg);
-                                        $(this).fadeIn(500);
-                                    });
-                                    console.log("Coucou");
-                                }
+
+                            if(message.status == 'error'){
+                                $(message.field).html(message.msg).fadeIn(1000);
+                                console.log(message.msg);
+                            }
+
+                            if(message.status == 'redirect'){
+                                $(message.field).fadeOut(150, function(){
+                                    $(this).html(message.msg);
+                                    $(this).fadeIn(500);
+                                });
+                            }
+
+                            if(message.status == 'reload'){
+                                window.location.replace(message.msg);
+                            }
                                 /*
                                 if(message.type == 'logout'){
                                     window.location = message.msg;
@@ -62,7 +57,6 @@ var AJAX = {
                                     $('.formbutton').removeClass('loading').html(btnText);
                                 },150);*/
 
-                            //});
                         },1000);
                     }
                 }

@@ -21,20 +21,20 @@ class AccountController
     {
         if (empty($_REQUEST["email"]) || empty($_REQUEST["password"]))
         {
-            Router::json('error', '.selector', 'Au moins un des champs est manquant');
+            Router::json('error', '#popUpLogin1 .error', 'Au moins un des champs est manquant');
             //Router::view('pages/account/login',["error"=>"Au moins un des champs est manquant"]); die();
         }
         $pwd =hash('sha512', $_REQUEST["password"].'1mhum4n');
         $res = Database::query("SELECT * FROM USER where USER_E_MAIL= '{$_REQUEST['email']}' and USER_PWD ='{$pwd}' ");
         if (!$res)
         {
-            Router::json('error', '.selector', 'Aucun compte trouvé');
+            Router::json('error', '#popUpLogin1 .error', 'Aucun compte trouvé');
             //Router::view('pages/account/login',["error"=>"Aucun compte trouvé"]); die();
         }
         $res = Database::query("SELECT USER_ID FROM USER where USER_E_MAIL= '{$_REQUEST['email']}'");
         $_SESSION["compte"] = $res[0]["USER_ID"];
         //header("location: " . Router::url(""));
-        Router::json('redir', '#popUpLogin1', 'Bonjour X');
+        Router::json('reload', '', '/');
     }
     /**
      * log out

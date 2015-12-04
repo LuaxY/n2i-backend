@@ -24,7 +24,8 @@ class DonateController
 
         if (empty($don))
         {
-            die("Don invalide");
+            die("");
+            Router::json('error', '.selector', 'Don invalide');
         }
 
         $list_agences = Database::query("SELECT ASSOCIATION.NOM_ASSOC, AGENCE.* from AGENCE, ASSOCIATION, USER
