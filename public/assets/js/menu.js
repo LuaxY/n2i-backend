@@ -132,6 +132,7 @@ $(function() {
    $('.contentSeriousGame').fadeOut();
      $('.content').fadeIn();
    $('.contentBoiteIdee').fadeIn();
+   window.location.replace("/ideabox");
    });
 
   //Over
