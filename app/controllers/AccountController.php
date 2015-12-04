@@ -9,7 +9,6 @@ class AccountController
      */
     public function index()
     {
-
         Router::view('pages/account/login');
     }
 
@@ -53,7 +52,7 @@ class AccountController
      */
     public function inscription()
     {
-        Router::view('pages/account/inscription'); die();
+        Router::json('redirect', '#popUpLogin1','pages/account/inscription'); die();
     }
     /**
      * create new account
@@ -120,105 +119,8 @@ class AccountController
     {
         $res = Database::query("SELECT USER_NOM,USER_PRENOM,USER_E_MAIL,USER_CP FROM USER WHERE USER_ID = '{$_SESSION['compte']}'");
 
-        Router::view('pages/account/compte',["infos" => $res[0]]);
+        Router::json('redirect', '#popUpLogin1','pages/account/compte',["infos" => $res[0]]);
     }
 
-    /**
-     * update account info
-     * id of account and field to update
-     **/
-    public function update()
-    {
-        if (empty(@$_REQUEST['id']))
-            die(json_encode(array("error" => "Aucun identifiant spécifié")));
-
-        $to_update = array();
-        $to_update['id'] = $_REQUEST['id'];
-
-        // check email
-        if (@$_REQUEST['email'])
-        {
-            if (!filter_var($_REQUEST['email'], FILTER_VALIDATE_EMAIL))
-                die(json_encode(array("error" => "Format de l'email incorrect")));
-
-            $to_update['Email'] = $_REQUEST['email'];
-        }
-
-        // check password
-        if (@$_REQUEST['password'])
-        {
-            $to_update['Mdp'] = md5($_REQUEST['password']);
-        }
-
-        $to_check = array(
-            "nom" => "Nom",
-            "prenom" => "Prenom",
-            "adresse" => "Adresse",
-            "code_postal" => "Code_postal",
-            "pays" => "Pays"
-        );
-
-        foreach ($to_check as $k => $v)
-        {
-            if (!empty($_REQUEST[$k]))
-                $to_update[$v] = $_REQUEST[$k];
-        }
-
-        $res = Database::save((object)$to_update, "users");
-
-        if ($res)
-            echo json_encode(array("message" => "Compte mis à jour"));
-        else
-            echo json_encode(array("error" => "Impossible de mettre à jour le compte"));
-    }
-
-    /**
-     * delete account
-     * id of account
-     **/
-    public function delete()
-    {
-        if (empty(@$_REQUEST['id']))
-            die(json_encode(array("error" => "Aucun identifiant spécifié")));
-
-        $res = Database::delete($_REQUEST['id'], 'users');
-
-        if($res)
-            echo json_encode(array("message" => "Compte supprimé"));
-        else
-            echo json_encode(array("error" => "Impossible de supprimer le compte"));
-    }
-
-    /**
-     * account login
-     * email and password
-     **/
-//    public function login()
-//    {
-//        // check required params
-//        $required = array("email", "password");
-//        $error_field = array();
-//
-//        foreach ($required as $r)
-//        {
-//            if (empty($_REQUEST[$r]))
-//                $error_field[] = $r;
-//        }
-//
-//        if (!empty($error_field))
-//            die(json_encode(array("error" => "Les champs ". implode(', ', $error_field) . " sont manquant")));
-//
-//        // check account
-//        $_REQUEST['password'] = md5($_REQUEST['password']);
-//        $res = Database::query("SELECT * FROM users WHERE Email = '{$_REQUEST['email']}' AND Mdp = '{$_REQUEST['password']}'");
-//
-//        if (!$res)
-//            die(json_encode(array("error" => "Email ou mot de passe incorrect")));
-//
-//        // delete password
-//        unset($res[0]['Mdp']);
-//
-//        echo json_encode($res[0]);
-//    }
 
 }

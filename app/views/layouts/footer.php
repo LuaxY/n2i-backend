@@ -47,6 +47,21 @@
 
       </div>
     </div>
+
+    <div class="contentGameZone">
+          <div class="blkLayout"></div>
+    			<canvas id="GameCanvas">Votre navigateur ne supporte pas HTML5, veuillez le mettre à jour pour jouer.</canvas>
+    		</div>
+
+        <div class="ledivsournois">
+          <div class="blkLayout"></div>
+          <img src="img/yo.jpg" alt=""/>
+        </div>
+
+        <div class="ledivpapa">
+          <div class="blkLayout"></div>
+          <img src="img/papa.jpg" alt=""/>
+        </div>
     <footer id="footer">
 
     </footer>
@@ -57,5 +72,6 @@
     <script src="<?php Router::asset('js/menu.js'); ?>"></script>
     <script src="<?php Router::asset('js/ajax.js'); ?>"></script>
     <script src="<?php Router::asset('js/voice.js'); ?>"></script>
+    <script src="<?php Router::asset('js/game.js'); ?>"></script>
 </body>
 </html>

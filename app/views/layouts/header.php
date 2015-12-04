@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/CSSPlugin.min.js"></script>
 </head>
 <body>
+    <div class="gameLink"></div>
     <div id="header">
         <h2>I'm Human</h2>
     </div>

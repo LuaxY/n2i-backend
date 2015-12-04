@@ -49,6 +49,8 @@ $(function() {
 
   });
 
+  var audio = new Audio('Sound/bopshort.wav');
+
   //Over
   if($height >= 641){
     $('#btnMenu1').mouseover(function(){
@@ -59,6 +61,15 @@ $(function() {
       TweenMax.to("#btnMenu1", 0.4, {ease: Power4.easeOut, width:"100%"});
     });
   };
+
+  $('#btnMenu1').on('click', function(){
+    audio.play();
+  });
+
+
+    $('#btnMenu3').on('click', function(){
+      audio.play();
+    });
 
     //Over
     if($height >= 641){
@@ -74,6 +85,7 @@ $(function() {
 
   //Button 2
   $('#btnMenu2').on('click', function(){
+      audio.play();
     $('.content').fadeOut();
     $('.contentMap').fadeOut();
     $('.contentSeriousGame').fadeOut();
@@ -102,17 +114,29 @@ $(function() {
     });
   };
 
+  $('.gameLink').on('click', function(){
+  $('.contentGameZone').fadeIn();
+  $('.contentGameZone').addClass('displayed');
+  $('.blkLayout').on('click', function(){
+    $('.contentGameZone').fadeOut();
+    $('.contentGameZone').removeClass('displayed');
+  })
+})
+
 
   //button 4
   $('#btnMenu4').on('click', function(){
+      audio.play();
     $('.content').fadeOut();
     $('.contentDon').fadeOut();
     $('.contentMap').fadeOut();
     $('.contentBoiteIdee').fadeOut();
     $('.contentSeriousGame').fadeIn();
+    window.location.replace("/game");
   });
 
   $('#btnMenu5').on('click', function(){
+      audio.play();
     $('.contentDon').fadeOut();
     $('.contentMap').fadeOut();
     $('.contentSeriousGame').fadeOut();
@@ -131,6 +155,7 @@ $(function() {
   };
 
   $('#btnMenu6').on('click', function(){
+      audio.play();
     $('.contentDon').fadeOut();
     $('.contentMap').fadeOut();
    $('.contentSeriousGame').fadeOut();
