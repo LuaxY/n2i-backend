@@ -6,8 +6,15 @@ Router::view('layouts/header');
   <div class="scrollIdeas">
     <?php
       foreach($ideas as $value){
-        echo("<hr>".$value["objet"]."<br/>");
+        $validate = $value["valide"];
+        if($validate == 0){$color='grey';}
+        else if($validate == 1){$color='green';}
+        else{$color='red';}
+
+        echo("<div style=\"background-color:".$color.";\"");
+        echo("<hr>".$value["objet"]."<br/><hr>");
         echo($value["message"]."<br/><br/>");
+        echo("</div>");
       }
     ?>
   </div>
