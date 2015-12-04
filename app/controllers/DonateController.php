@@ -8,8 +8,8 @@ class DonateController
         if (!isLogged())
             header("location: " . Router::url("account/login"));
 
-        //Router::view('pages/dons/faire_un_don');
-        Router::json('redirect', '.selector', 'pages/dons/api_faire_un_don');
+        Router::view('pages/dons/faire_un_don');
+        //Router::json('redirect', '.selector', 'pages/dons/api_faire_un_don');
     }
 
     public function choisir_une_agence()
@@ -18,6 +18,9 @@ class DonateController
             header("location: " . Router::url("account/login"));
 
         $don = @$_REQUEST['don'];
+
+        // TECHNIQUE D'ESCRO :D (pour récup plustard)
+        $_SESSION['don'] = $don;
 
         if (empty($don))
         {
@@ -34,7 +37,6 @@ class DonateController
                                            FROM AGENCE, ASSOCIATION
                                            WHERE AGENCE.ASSOC_ID = ASSOCIATION.ASSOC_ID");
         }
-        var_dump($list_agences);
 
         Router::view('pages/dons/choisir_une_agence', ["don" => $don, "list_agences" => $list_agences]);
     }
@@ -61,23 +63,25 @@ class DonateController
         if (!isLogged())
             header("location: " . Router::url("account/login"));
 
-
         $date = @$_REQUEST['date'];
         $heure = @$_REQUEST['heure'];
+        $agenceId = @$_REQUEST['agence_id'];
 
-        if (empty($date) || empty($heure))
+        if (empty($date) || empty($heure) || empty($agenceId))
         {
             die("Date/heure invalide");
         }
 
         $res = Database::save((object)array(
-            "AGENCE_ID" => $_REQUEST['AGENCE_ID'],
-            "message" => $_REQUEST['Message'],
+            "AGENCE_ID" => $agenceId,
+            "USER_ID" => $_SESSION["compte"],
+            "MATERIEL" => $_SESSION['don'],
+            "RDV_DATE" => "$date $heure"
         ), "RDV");
 
-        // TODO: store RDV
+        unset($_SESSION['don']);
 
-        // TODO: if ok -> show success
+        Router::json('success', '.selector', 'Rendez-vous bien effectué...');
     }
 
 }

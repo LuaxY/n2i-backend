@@ -8,7 +8,7 @@ $date = date("Y-m-d");
     <br>
     Heure: <input type="time" name="heure" value="">
     <br>
-    <input type="hidden" name="AGENCE_ID" value="<?php echo $AGENCE_ID; ?>">
+    <input type="hidden" name="agence_id" value="<?php echo $AGENCE_ID; ?>">
     <input type="submit" value="Valider le rendez-vous">
 </form>
 
