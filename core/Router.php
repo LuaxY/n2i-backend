@@ -117,4 +117,25 @@ class Router
         $params = explode('/', $_GET['params']);
         return @$params[$id + 1];
     }
+
+    public static function json($type, $selector, $content)
+    {
+        $json = new stdClass;
+
+        if ($type == "redirect")
+        {
+            $v = VIEW . DS . $content . '.php';
+            ob_start();
+            include $v;
+            $content = ob_get_contents();
+            ob_end_clean();
+        }
+
+        $json->field = $selector;
+        $json->status = $type;
+        $json->msg = htmlentities($content);
+
+        echo json_encode($json);
+        die();
+    }
 }

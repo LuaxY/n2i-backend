@@ -8,7 +8,8 @@ class DonateController
         if (!isLogged())
             header("location: " . Router::url("account/login"));
 
-        Router::view('pages/dons/faire_un_don');
+        //Router::view('pages/dons/faire_un_don');
+        Router::json('redirect', '.selector', 'pages/dons/api_faire_un_don');
     }
 
     public function choisir_une_agence()
