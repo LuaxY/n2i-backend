@@ -6,15 +6,15 @@ class DonateController
     public function faire_un_don()
     {
         if (!isLogged())
-            Router::view('pages/error', ['error' => 'Connectez-vous']);
+            return Router::view('pages/error', ['error' => 'Connectez-vous']);
 
-        Router::view('pages/dons/faire_un_don');
+        return Router::view('pages/dons/faire_un_don');
     }
 
     public function choisir_une_agence()
     {
         if (!isLogged())
-            header("location: " . Router::url("account/login"));
+            return Router::view('pages/error', ['error' => 'Connectez-vous']);
 
         $don = @$_REQUEST['don'];
 
@@ -23,7 +23,7 @@ class DonateController
 
         if (empty($don))
         {
-            Router::view('pages/error', ['error' => 'Don invalide']);
+            return Router::view('pages/error', ['error' => 'Don invalide']);
         }
 
         $list_agences = Database::query("SELECT ASSOCIATION.NOM_ASSOC, AGENCE.* from AGENCE, ASSOCIATION, USER
@@ -37,28 +37,28 @@ class DonateController
                                            WHERE AGENCE.ASSOC_ID = ASSOCIATION.ASSOC_ID");
         }
 
-        Router::view('pages/dons/choisir_une_agence', ["don" => $don, "list_agences" => $list_agences]);
+        return Router::view('pages/dons/choisir_une_agence', ["don" => $don, "list_agences" => $list_agences]);
     }
 
     public function prendre_un_rendez_vous()
     {
         if (!isLogged())
-            Router::view('pages/error', ['error' => 'Connectez-vous']);
+            return Router::view('pages/error', ['error' => 'Connectez-vous']);
 
         $agenceId = Router::getParam(1);
 
         if (!$agenceId)
         {
-            Router::view('pages/error', ['error' => 'Agence invalide']);
+            return Router::view('pages/error', ['error' => 'Agence invalide']);
         }
 
-        Router::view('pages/dons/prendre_un_rendez_vous', ["AGENCE_ID" => $agenceId]);
+        return Router::view('pages/dons/prendre_un_rendez_vous', ["AGENCE_ID" => $agenceId]);
     }
 
     public function valider_le_rendez_vous()
     {
         if (!isLogged())
-            Router::view('pages/error', ['error' => 'Connectez-vous']);
+            return Router::view('pages/error', ['error' => 'Connectez-vous']);
 
         $date = @$_REQUEST['date'];
         $heure = @$_REQUEST['heure'];
@@ -66,7 +66,7 @@ class DonateController
 
         if (empty($date) || empty($heure) || empty($agenceId))
         {
-            Router::view('pages/error', ['error' => 'Date/heure invalide']);
+            return Router::view('pages/error', ['error' => 'Date/heure invalide']);
         }
 
         $res = Database::save((object)array(
@@ -78,7 +78,7 @@ class DonateController
 
         //unset($_SESSION['don']);
 
-        Router::view('pages/success', ['success' => 'Le rendez-vous a bien était prit en compte.']);
+        return Router::view('pages/success', ['success' => 'Le rendez-vous a bien était prit en compte.']);
     }
 
 }
