@@ -336,10 +336,12 @@ canvas
     float: left;
     font-size: 25px;
     margin-left: 2%;
+    line-height: 50px;
   }
 
   #btnMenu1, #btnMenu2, #btnMenu3, #btnMenu4, #btnMenu5{
     margin-bottom:1%;
+    height: 50px;
   }
 
   .content{

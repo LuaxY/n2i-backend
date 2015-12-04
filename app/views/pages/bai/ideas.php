@@ -20,6 +20,9 @@ Router::view('layouts/header');
   </div>
   <hr>
   <div class="center"><a href="ideabox/nouvelle_idee">Soumettre une idée!</a></div>
+<div class="center"><a href="ideabox/nouvelle_idee">Vert: Validé</a></div>
+<div class="center"><a href="ideabox/nouvelle_idee">Rouge: Refusé</a></div>
+<div class="center"><a href="ideabox/nouvelle_idee">Gris: En attente</a></div>
 </div>
 <?php
 Router::view('layouts/footer');

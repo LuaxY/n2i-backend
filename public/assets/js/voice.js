@@ -90,6 +90,10 @@ var Voice = {
           case "loging":
           case "logging":
           case "logine":
+          case "connection":
+          case "connexion":
+          case "connect":
+          case "connecter":
               console.log("login");
               $('.contentLogin').fadeIn();
               TweenMax.to(".contentLogin", 1 , {ease: Elastic.easeOut.config(1.2, 0.3), css:{scaleX:1, scaleY:1, opacity : 1}});

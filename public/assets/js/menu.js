@@ -49,7 +49,7 @@ $(function() {
 
   });
 
-  var audio = new Audio('Sound/bopshort.wav');
+  var audio = new Audio('/sound/bopshort.wav');
 
   //Over
   if($height >= 641){

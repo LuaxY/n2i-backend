@@ -481,61 +481,61 @@ window.onload = function()
 	NbrBlocksHeight =  Math.ceil(CanvaHeight / LargeurBloc);
 
 	IMGbackground = new Image();
-	IMGbackground.src = "img/sky.png";
+	IMGbackground.src = "/img/sky.png";
 
 	IMGgound = new Image()
-	IMGgound.src = "img/grass.png";
+	IMGgound.src = "/img/grass.png";
 
 	IMGplayer1_1 = new Image();
-	IMGplayer1_1.src = "img/player1_1.png";
+	IMGplayer1_1.src = "/img/player1_1.png";
 
 	IMGplayer1_2 = new Image();
-	IMGplayer1_2.src = "img/player1_2.png";
+	IMGplayer1_2.src = "/img/player1_2.png";
 
 	IMGplayer2_1 = new Image();
-	IMGplayer2_1.src = "img/player2_1.png";
+	IMGplayer2_1.src = "/img/player2_1.png";
 
 	IMGplayer2_2 = new Image();
-	IMGplayer2_2.src = "img/player2_2.png";
+	IMGplayer2_2.src = "/img/player2_2.png";
 
 	IMGplayerGround1 = new Image();
-	IMGplayerGround1.src = "img/playerground1.png";
+	IMGplayerGround1.src = "/img/playerground1.png";
 
 	IMGplayerGround2 = new Image();
-	IMGplayerGround2.src = "img/playerground2.png";
+	IMGplayerGround2.src = "/img/playerground2.png";
 
 	TargetHead = new Image();
-	TargetHead.src = "img/character_head.png";
+	TargetHead.src = "/img/character_head.png";
 
 	TargetArm = new Image();
-	TargetArm.src = "img/character_arm.png";
+	TargetArm.src = "/img/character_arm.png";
 
 	TargetLeg = new Image();
-	TargetLeg.src = "img/character_leg.png";
+	TargetLeg.src = "/img/character_leg.png";
 
 	BlockHospital = new Image();
-	BlockHospital.src = "img/arrivee.png";
+	BlockHospital.src = "/img/arrivee.png";
 
 	HospitalArm = new Image();
-	HospitalArm.src = "img/hospital_arm.png";
+	HospitalArm.src = "/img/hospital_arm.png";
 
 	HospitalHead = new Image();
-	HospitalHead.src = "img/hospital_head.png";
+	HospitalHead.src = "/img/hospital_head.png";
 
 	HospitalLeg = new Image();
-	HospitalLeg.src = "img/hospital_leg.png";
+	HospitalLeg.src = "/img/hospital_leg.png";
 
 	ArmIcon = new Image();
-	ArmIcon.src = "img/arm.png";
+	ArmIcon.src = "/img/arm.png";
 
 	HeadIcon = new Image();
-	HeadIcon.src = "img/head.png";
+	HeadIcon.src = "/img/head.png";
 
 	LegIcon = new Image();
-	LegIcon.src = "img/leg.png";
+	LegIcon.src = "/img/leg.png";
 
 	PauseIMG = new Image();
-	PauseIMG.src = "img/pause.png";
+	PauseIMG.src = "/img/pause.png";
 
 	PositionPlayerX = Math.ceil(CanvaWidth/2);
 	PositionPlayerY = 0;

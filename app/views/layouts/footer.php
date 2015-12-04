@@ -55,12 +55,12 @@
 
         <div class="ledivsournois">
           <div class="blkLayout"></div>
-          <img src="img/yo.jpg" alt=""/>
+          <img src="/img/yo.jpg" alt=""/>
         </div>
 
         <div class="ledivpapa">
           <div class="blkLayout"></div>
-          <img src="img/papa.jpg" alt=""/>
+          <img src="/img/papa.jpg" alt=""/>
         </div>
     <footer id="footer">
 
