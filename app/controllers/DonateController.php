@@ -6,7 +6,7 @@ class DonateController
     public function faire_un_don()
     {
         if (!isLogged())
-            header("location: " . Router::url("account/login"));
+            Router::view('pages/error', ['error' => 'Connectez-vous']);
 
         Router::view('pages/dons/faire_un_don');
     }
@@ -43,7 +43,7 @@ class DonateController
     public function prendre_un_rendez_vous()
     {
         if (!isLogged())
-            header("location: " . Router::url("account/login"));
+            Router::view('pages/error', ['error' => 'Connectez-vous']);
 
         $agenceId = Router::getParam(1);
 
@@ -58,7 +58,7 @@ class DonateController
     public function valider_le_rendez_vous()
     {
         if (!isLogged())
-            header("location: " . Router::url("account/login"));
+            Router::view('pages/error', ['error' => 'Connectez-vous']);
 
         $date = @$_REQUEST['date'];
         $heure = @$_REQUEST['heure'];
