@@ -80,11 +80,7 @@ var Voice = {
           case "home":
           case "homme":
               console.log("home");
-              $('.contentDon').fadeOut();
-              $('.contentMap').fadeOut();
-              $('.contentBoiteIdee').fadeOut();
-              $('.contentSeriousGame').fadeOut();
-              $('.content').fadeIn();
+             window.location.replace("/");
               break;
           case "login":
           case "loging":
@@ -96,17 +92,14 @@ var Voice = {
           case "connecter":
               console.log("login");
               $('.contentLogin').fadeIn();
+              $('body').css('overflow', "hidden");
               TweenMax.to(".contentLogin", 1 , {ease: Elastic.easeOut.config(1.2, 0.3), css:{scaleX:1, scaleY:1, opacity : 1}});
               Menu.test = true;
               break;
             case "don":
             case "dont":
                 console.log("don");
-                $('.content').fadeOut();
-                $('.contentBoiteIdee').fadeOut();
-                $('.contentMap').fadeOut();
-                $('.contentSeriousGame').fadeOut();
-                $('.contentDon').fadeIn();
+                window.location.replace("/dons/faire-un-don");
                 break;
             case "besoinmondial":
             case "besoinmondiale":
@@ -115,20 +108,12 @@ var Voice = {
                 break;
             case "etsionjouait":
                 console.log("etsionjouait");
-                $('.content').fadeOut();
-                $('.contentDon').fadeOut();
-                $('.contentBoiteIdee').fadeOut();
-                $('.contentMap').fadeOut();
-                $('.contentSeriousGame').fadeIn();
+                window.location.replace("/game");
                 break;
             case "boiteaidee":
             case "boiteaidees":
                 console.log("boiteaidee");
-                $('.content').fadeOut();
-                $('.contentDon').fadeOut();
-                $('.contentMap').fadeOut();
-                $('.contentSeriousGame').fadeOut();
-                $('.contentBoiteIdee').fadeIn();
+                window.location.replace("/ideabox");
                 break;
             case "yoann":
             case "yoan":
