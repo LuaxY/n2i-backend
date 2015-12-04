@@ -13,27 +13,20 @@ Agences local :
         <th>Nom</th>
         <th>Adresse</th>
         <th>Action</th>
+        <th>E-Mail</th>
     </tr>
-    <tr>
-        <td>MonAssoc</td>
-        <td>42 LifeStree 13 666 Nullpart</td>
-        <td><a href="/dons/prendre-un-rendez-vous/1">Selectionner</td>
-    </tr>
-    <tr>
-        <td>MonAssoc</td>
-        <td>42 LifeStree 13 666 Nullpart</td>
-        <td><a href="">Selectionner</td>
-    </tr>
-    <tr>
-        <td>MonAssoc</td>
-        <td>42 LifeStree 13 666 Nullpart</td>
-        <td><a href="">Selectionner</td>
-    </tr>
-    <tr>
-        <td>MonAssoc</td>
-        <td>42 LifeStree 13 666 Nullpart</td>
-        <td><a href="">Selectionner</td>
-    </tr>
+    <?php
+      foreach($list_agences as $key => $elem)
+      {
+        echo "<tr>"
+            ."<td>".$elem['NOM_ASSOC']."</td>"
+            ."<td>".$elem['ADRESSE']."</td>"
+            ."<td>".$elem['AGENCE_VILLE']."</td>"
+            ."<td>".$elem['AGENCE_E_MAIL']."</td>"
+            ."<td><a href='/dons/prendre-un-rendez-vous/".$elem['AGENCE_ID']."'>Selectionner</td>"
+            ."</tr>";
+      }
+    ?>
 </table>
 
 <?php

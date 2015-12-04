@@ -1,12 +1,14 @@
 <?php
 Router::view('layouts/header');
+$date = date("Y-m-d");
 ?>
 
 <form action="/dons/valider-le-rendez-vous" method="post">
-    Date: <input type="text" name="date" value="">
+    Date: <input type="date" name="date" min="<?php echo $date ?>" value="">
     <br>
-    Heure: <input type="text" name="heure" value="">
+    Heure: <input type="time" name="heure" value="">
     <br>
+    <input type="hidden" name="AGENCE_ID" value="<?php echo $AGENCE_ID; ?>">
     <input type="submit" value="Valider le rendez-vous">
 </form>
 

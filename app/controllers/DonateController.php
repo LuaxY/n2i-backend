@@ -23,7 +23,19 @@ class DonateController
             die("Don invalide");
         }
 
-        Router::view('pages/dons/choisir_une_agence', ["don" => $don]);
+        $list_agences = Database::query("SELECT ASSOCIATION.NOM_ASSOC, AGENCE.* from AGENCE, ASSOCIATION, USER
+                                  WHERE AGENCE.ASSOC_ID = ASSOCIATION.ASSOC_ID
+                                  AND AGENCE.AGENCE_CP = 78000
+                                  ORDER BY USER_ID");
+        if(empty($list_agences))
+        {
+          $list_agences = Database::query("SELECT AGENCE.AGENCE_ID, ASSOCIATION.NOM_ASSOC, AGENCE.ADRESSE, AGENCE.AGENCE_CP, AGENCE.AGENCE_VILLE, AGENCE.AGENCE_E_MAIL
+                                           FROM AGENCE, ASSOCIATION
+                                           WHERE AGENCE.ASSOC_ID = ASSOCIATION.ASSOC_ID");
+        }
+        var_dump($list_agences);
+
+        Router::view('pages/dons/choisir_une_agence', ["don" => $don, "list_agences" => $list_agences]);
     }
 
     public function prendre_un_rendez_vous()
@@ -40,13 +52,14 @@ class DonateController
 
         // TODO: get agence /w $agenceId
 
-        Router::view('pages/dons/prendre_un_rendez_vous');
+        Router::view('pages/dons/prendre_un_rendez_vous', ["AGENCE_ID" => $agenceId]);
     }
 
     public function valider_le_rendez_vous()
     {
         if (!isLogged())
             header("location: " . Router::url("account/login"));
+
 
         $date = @$_REQUEST['date'];
         $heure = @$_REQUEST['heure'];
@@ -56,7 +69,10 @@ class DonateController
             die("Date/heure invalide");
         }
 
-        // TODO: check date
+        $res = Database::save((object)array(
+            "AGENCE_ID" => $_REQUEST['AGENCE_ID'],
+            "message" => $_REQUEST['Message'],
+        ), "RDV");
 
         // TODO: store RDV
 

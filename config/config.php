@@ -2,7 +2,7 @@
 
 define('DB_USER',     'n2i_2015');
 define('DB_PASS',     'n2i_2015');
-define('DB_SERVER',   'mysql:dbname=n2i_2015;host=voidmx.net');
+define('DB_SERVER',   'mysql:dbname=n2i_2015;host=voidmx.net;charset=utf8');
 
 define('TOKEN',    'YoanCyrilYann');
 
