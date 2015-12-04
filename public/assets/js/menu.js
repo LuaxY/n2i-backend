@@ -16,6 +16,7 @@ $(function() {
   $('.btnLogin').on('click', function(){
     //TweenMax.to(".Menu.test", 0.2, {ease: Power4.easeOut, opacity:"0.8"});
     $('.contentLogin').fadeIn();
+    $('body').css('overflow', "hidden");
     TweenMax.to(".contentLogin", 1 , {ease: Elastic.easeOut.config(1.2, 0.3), css:{scaleX:1, scaleY:1, opacity : 1}});
     Menu.test = true;
   });
@@ -30,7 +31,11 @@ $(function() {
 
   $('#filtre').on('click', function(){
     if(Menu.test == true){
-        TweenMax.to(".contentLogin", 1 , {ease: Elastic.easeIn.config(1.2, 0.7), css:{scaleX:0.5, scaleY:0.5, opacity : 0}});
+
+        TweenMax.to(".contentLogin", 1 , {ease: Elastic.easeIn.config(1.2, 0.7), css:{scaleX:0.5, scaleY:0.5, opacity : 0}, onComplete:function(){
+            $('body').css('overflow', "auto");
+        }});
+
         Menu.test = false;
     }
   });
