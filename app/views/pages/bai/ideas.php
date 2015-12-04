@@ -12,8 +12,8 @@ Router::view('layouts/header');
         else{$color='red';}
 
         echo("<div style=\"background-color:".$color.";\"");
-        echo("<hr>".$value["objet"]."<br/><hr>");
-        echo($value["message"]."<br/><br/>");
+        echo("<hr>".$value["objet"]."<br/>");
+        echo($value["message"]."<br/><br/><hr>");
         echo("</div>");
       }
     ?>
