@@ -1,6 +1,4 @@
-<?php
-Router::view('layouts/header');
-?>
+
 
 <div class="layout">
     <form id="LogIn" action="/account/create" method="POST">
@@ -15,7 +13,3 @@ Router::view('layouts/header');
         echo($error); ?>
 </div>
 
-<?php
-
-Router::view('layouts/footer');
-?>
