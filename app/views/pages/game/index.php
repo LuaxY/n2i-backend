@@ -1,3 +1,13 @@
+<?php
+Router::view('layouts/header');
+?>
+
+
+<div class="descContent">
+
+    <br>
+    <br>
+    <br>
 <script type="text/javascript" src="<?php Router::asset('js/jquery-2.1.4.min.js'); ?>"></script>
 
 <?php
@@ -60,3 +70,9 @@
 
 
 </script>
+
+</div>
+
+<?php
+Router::view('layouts/footer');
+?>
