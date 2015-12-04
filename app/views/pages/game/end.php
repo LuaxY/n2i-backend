@@ -1,0 +1,1 @@
+<label>Votre score est de : <?php echo($wins) ?>/5 ! </label>
