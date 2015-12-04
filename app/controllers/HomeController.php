@@ -2,8 +2,13 @@
 
 class HomeController
 {
+    public function __construct()
+    {
+
+    }
+
     public function index()
     {
-        return Router::view('pages/home');
+        Router::view('pages/home');
     }
 }

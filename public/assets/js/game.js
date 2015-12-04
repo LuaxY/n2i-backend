@@ -105,9 +105,9 @@ function Is_Landed()
 	PlayerDirection = true;
   });
 
-$( document ).keydown(function(event) 
-{	
-	console.log(event);
+$( document ).keydown(function(event)
+{
+	////console.log(event);
  	if(event.keyCode == 39)
 	{
 		Is_Right_Pressed = true;
@@ -123,7 +123,7 @@ $( document ).keydown(function(event)
 		Is_Up_Pressed = true;
 	}
 
-	if(event.keyCode == 13)	
+	if(event.keyCode == 13)
 	{
 		if(Is_Running)
 		{
@@ -159,7 +159,7 @@ function LeftAction()
 		if(PositionPlayerX - PlayerSpeed >= 0)
 		{
 			PositionPlayerX -= PlayerSpeed;
-		}	
+		}
 	//}
 }
 
@@ -171,7 +171,7 @@ function RightAction()
 		{
 			PositionPlayerX += PlayerSpeed;
 		}
-		
+
 	//}
 }
 
@@ -188,7 +188,7 @@ function ApplyGravity()
 	var DestinationY = Math.ceil((PositionPlayerY+playerGravity)/LargeurBloc);
 	var DestinationX = Math.ceil((PositionPlayerX)/LargeurBloc);
 
-	//console.log(DestinationX);
+	//////console.log(DestinationX);
 
 	if(Map[DestinationX][DestinationY] == 1 || Map[DestinationX][DestinationY] == 10 ||Map[DestinationX][DestinationY] == 11 || Map[DestinationX][DestinationY] == 12)
 	{
@@ -253,19 +253,19 @@ function GrabTarget()
 			case 2: //arm
 				CurentTarget = 1;
 				Map[DestinationX][DestinationY] = 0;
-				console.log("Je sauve Cyril");
+				////console.log("Je sauve Cyril");
 			break;
 
 			case 3://head
 				CurentTarget = 2;
 				Map[DestinationX][DestinationY] = 0;
-				console.log("Je sauve Dadark");
+				////console.log("Je sauve Dadark");
 			break;
 
 			case 4://leg
 				CurentTarget = 3;
 				Map[DestinationX][DestinationY] = 0;
-				console.log("Je sauve Boobizz");
+				////console.log("Je sauve Boobizz");
 			break;
 
 			default:
@@ -319,8 +319,8 @@ function InitMap()
 	Map[1][Math.ceil(NbrBlocksHeight/5)] = 11;
 	Map[1][Math.ceil(NbrBlocksHeight/2)] = 12;
 
-	console.log("Array Map --->");
-	console.log(Map);
+	////console.log("Array Map --->");
+	////console.log(Map);
 }
 
 function PrintMap()
@@ -395,9 +395,9 @@ function PrintMap()
 				{
 					ctx.drawImage(IMGplayer2_1,PositionPlayerX-(IMGplayer2_1.width/2),PositionPlayerY-(IMGplayer2_1.height/2));
 				}
-				
+
 				PlayerCurentSprite = 2;
-				console.log("sprite player 1");
+				////console.log("sprite player 1");
 			break;
 
 			case 2:
@@ -410,7 +410,7 @@ function PrintMap()
 					ctx.drawImage(IMGplayer2_2,PositionPlayerX-(IMGplayer2_1.width/2),PositionPlayerY-(IMGplayer2_1.height/2));
 				}
 				PlayerCurentSprite = 1;
-				console.log("sprite player 2");
+				////console.log("sprite player 2");
 			break;
 		}
 
@@ -448,8 +448,8 @@ function Game_Frame()
 		return;
 	}
 	else
-	{	
-		console.log('Boucle principale');
+	{
+		////console.log('Boucle principale');
 		if(Is_Left_Pressed)
 		{
 			LeftAction();
@@ -469,14 +469,14 @@ function Game_Frame()
 	}
 }
 
-window.onload = function() 
+window.onload = function()
 {
 	var canvas = document.getElementById('GameCanvas');
 	ctx = canvas.getContext('2d');
 
 	CanvaWidth = Math.ceil($('#GameCanvas').parent().width());
 	CanvaHeight = Math.ceil($('#GameCanvas').parent().height());
-	
+
 	NbrBlocksWidth =  Math.ceil(CanvaWidth / LargeurBloc);
 	NbrBlocksHeight =  Math.ceil(CanvaHeight / LargeurBloc);
 
@@ -553,8 +553,8 @@ window.onload = function()
 		}
 	}
 
-	console.log("NbrBlocksWidth --> "+ NbrBlocksWidth);
-	console.log("NbrBlocksHeight --> "+ NbrBlocksHeight);
+	////console.log("NbrBlocksWidth --> "+ NbrBlocksWidth);
+	////console.log("NbrBlocksHeight --> "+ NbrBlocksHeight);
 
 	InitMap();
 	PrintMap();

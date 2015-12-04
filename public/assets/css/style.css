@@ -321,17 +321,6 @@ canvas
     margin-bottom: 10px;
 }
 
-#submitSerious{
-    width : 250px;
-    height : 40px;
-    margin: 30px auto;
-    font-size: 25px;
-    font-family: Arial;
-    background: #6EFACB;
-    border : 1px solid black;
-    display : block;
-}
-
 .input-group{
     margin-left: 20px;
 }
