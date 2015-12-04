@@ -4,50 +4,17 @@ var AJAX = {
             console.log('JS AJAX INIT');
 
             /* Manage all .xhrForm with button /!\ need class active in case of                   // multiple form in same page */
-            $(document).on('submit','.xhrForm.active', function(e){
+            $(document).on('submit','#connexion', function(e){
                 e.preventDefault();
-                if($(this).hasClass('file')){
-                    AJAX.request($(this), true);
-                }else{
-                    AJAX.request($(this), false);
-                }
-            });
-
-            /* Manage all .xhrForm with no button,
-            // trigger elem with class triggerSubmit
-            // and #xhrForm with class active*/
-            $(document).on('click','.xhrForm.active .triggerSubmit', function(e){
-                e.preventDefault();
-                if($(this).hasClass('file')){
-                    AJAX.request($(this).parents('form'), true);
-                }else{
-                    AJAX.request($(this).parents('form'), false);
-                }
+                AJAX.request($(this));
             });
         },
-        request: function(form, file){
-            var btnText;
-            var processdata, contenttype = true;
-            if(file){
-                processdata, contenttype = false;
-            }
-
-
-            var formData = new FormData();
-            var fileInput = document.querySelector('.fileInput');
-
-
-            formData.append('file', fileInput.files[0]);
-            formData.append('todo', form.find('input[name=todo]').val());
-            formData.append('routing', form.find('input[name=routing]').val());
+        request: function(form){
 
             $.ajax({
-                url: 'http://127.0.0.1/urdresser/dispatcher',
+                url: form.attr('action'),
                 type: 'POST',
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
+                data: form.serialize(),
                 beforeSend: function(){
                     //remove errors
                 },
@@ -59,14 +26,16 @@ var AJAX = {
                     if(data){
                         console.log(data);
                         setTimeout(function(){
+                            message = data;
                             /*objet de retour*/
                             /*
                             * JSON : type -> success, error...
                                      msg -> html ou message d'erreur
                                      field -> champ a remplir ou modifier
                             */
-                            $.each(data, function(index, message){
-                                if(message.type == 'error'){
+                            //$.each(data, function(index, message){
+                                console.log(message);
+                                if(message.status == 'error'){
                                     $('.formError').html(message.msg).fadeIn(1000);
                                     console.log(message.msg);
                                     if(message.field){
@@ -74,22 +43,26 @@ var AJAX = {
                                         $('input[name='+message.field+'], select[name='+message.field+']').addClass('error').parent('.outer-select').addClass('error');
                                     }
                                 }
-                                if(message.type == 'redirect'){
+                                if(message.status == 'success'){
+                                    $(message.field).html(message.msg);
+                                }
+                                if(message.status == 'redir'){
                                     //update body
                                     $(message.field).fadeOut(150, function(){
                                         $(this).html(message.msg);
                                         $(this).fadeIn(500);
                                     });
+                                    console.log("Coucou");
                                 }
                                 /*
                                 if(message.type == 'logout'){
                                     window.location = message.msg;
                                 }*/
-                                setTimeout(function(){
+                                /*setTimeout(function(){
                                     $('.formbutton').removeClass('loading').html(btnText);
-                                },150);
+                                },150);*/
 
-                            });
+                            //});
                         },1000);
                     }
                 }
