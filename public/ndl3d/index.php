@@ -23,6 +23,7 @@
 	</head>
 	<body>
 		<div class="logo"><img src="assets/images/logo_im_human.png" alt="icon-human"></div>
+		<div style="text-align:center;color:white;"><p>Les pourcentages représentent les actions de la sécurité civile</p></div>
 		<div class="layout"></div>
 		<div class="intro">
 			<div class="intro-content">
@@ -33,7 +34,6 @@
 				</div>
 			</div>
 		</div>
-
 	</body>
 
 </html>
